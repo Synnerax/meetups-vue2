@@ -1,6 +1,6 @@
 <template>
   <section class="event-card" @click="goTo(eventInfo.id)">
-      <img src="https://source.unsplash.com/random/224x124" class="card-img" alt="">
+      <div class="color-bar"></div>
       <div class="date-time-container">
         <span class="card-date">{{eventInfo.date}}, </span>
         <span class="card-time">{{eventInfo.time.hour}}:</span>
@@ -36,11 +36,16 @@ export default {
 
 }
 
-.event-card > img {
+.event-card > .color-bar {
   margin: 0 auto 0 auto;
+  height: 10px;
+  width: 100%;
+  background: brown;
 }
 
 .date-time-container, .card-title, .card-organizer {
   margin-left: 15px;
 }
+
+
 </style>

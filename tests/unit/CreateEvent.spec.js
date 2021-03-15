@@ -48,7 +48,7 @@ describe("CreateEvent.vue", () => {
 
     it("should do a api call when button is clicked", async () => {
         
-        const expectedUrl = "https://api.jsonbin.io/v3/b/60381b86ab68b51aec241829/"
+        const expectedUrl = "https://api.jsonbin.io/v3/b/6038c7059342196a6a687d55/"
 
         const expectedText = {
             "id": "123",
