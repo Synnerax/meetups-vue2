@@ -17,8 +17,8 @@
               {{eventInfo.description}}
               </p>
               <section v-show="eventOver">
-                  <Review >
-                  </Review>
+                  <Reviews :reviews="eventInfo.reviews">
+                  </Reviews>
               </section>
           </section>
           
@@ -46,11 +46,11 @@
 
 <script>
 
-import Review from '@/components/Review.vue'
+import Reviews from '@/components/Reviews.vue'
 export default {
     name: "event-info-page",
     components: {
-        Review
+        Reviews
     },
     data() {
         return {
@@ -75,7 +75,7 @@ export default {
             expiredEvent.eventOver = true
             //console.log("this is the new event:", event)
             console.log("event Array after click and update:", eventArray)
-            let emitValue = [...expiredEvent]
+            let emitValue = {...expiredEvent}
             this.$emit("eventExpired", emitValue)
         }
     },
@@ -90,12 +90,14 @@ export default {
         tag : this.chosenEvent ? this.chosenEvent.tag : 'Error getting tag',
         date : this.chosenEvent ? this.chosenEvent.date : 'Error getting date',
         time : this.chosenEvent ? this.chosenEvent.time : 'Error getting time',
+        reviews : this.chosenEvent ? this.chosenEvent.reviews : 'Error getting reviews',
+
 
       }
       return event;
     },
     eventOver() {
-        return this.chosenEvent.eventOver
+        return this.chosenEvent ? this.chosenEvent.eventOver: false
     },
     chosenEvent(){ 
         if ( this.$route !== undefined ) {
