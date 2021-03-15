@@ -1,5 +1,5 @@
 <template>
-  <section class="event-card">
+  <section class="event-card" @click="goTo(eventInfo.id)">
       <img src="https://source.unsplash.com/random/224x124" class="card-img" alt="">
       <div class="date-time-container">
         <span class="card-date">{{eventInfo.date}}, </span>
@@ -17,6 +17,12 @@ export default {
     props: {
         eventInfo: Object,
         eventArray: Array
+    },
+    methods: {
+      goTo(id) {
+        console.log(id)
+        this.$router.push(`/event-info/${id}`);
+    }
     }
 }
 </script>
