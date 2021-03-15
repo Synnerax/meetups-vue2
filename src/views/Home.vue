@@ -5,7 +5,7 @@
       <h1 class="section-header">Events</h1>
       <section class="event-list">
 
-      <EventCard @click="goTo(eventInfo.id)" :eventsArray="eventsArray" v-for="eventInfo in eventsArray" :key="eventInfo.id" :eventInfo="eventInfo"></EventCard>
+      <EventCard :eventsArray="eventsArray" v-for="eventInfo in eventsArray" :key="eventInfo.id" :eventInfo="eventInfo"></EventCard>
       </section>
     </section>
   </div>
@@ -23,11 +23,6 @@ export default {
   components: {
     SearchField,
     EventCard
-  },
-  methods: {
-      goTo(id) {
-      this.$router.push(`/event-info/${id}`);
-    }
   },
   mounted() {
     //this.$nextTick(() => {

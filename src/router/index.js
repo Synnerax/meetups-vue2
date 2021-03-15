@@ -1,5 +1,8 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+
+Vue.use(VueRouter)
 
 const routes = [
   {
@@ -20,11 +23,12 @@ const routes = [
     name: 'event-info',
     component: () => import('../views/InfoPage.vue')
   }
-
 ]
 
-const router = createRouter({
-  history: createWebHashHistory(),
+
+
+
+const router = new VueRouter({
   routes
 })
 
