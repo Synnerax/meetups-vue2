@@ -7,7 +7,7 @@
     <button @click="resetEvents">Reset events</button>
     </div>
   </div> 
-  <router-view :eventsArray="eventsArray" :eventHistory="eventHistory" v-on:entered="addToHistory($event)" v-on:eventExpired="updateHistory($emitValue)"/>
+  <router-view :eventsArray="eventsArray" :eventHistory="eventHistory" v-on:entered="addToHistory($event)" v-on:eventExpired="updateHistory(emitValue)"/>
   </div>
 </template>
 
