@@ -17,7 +17,7 @@
               {{eventInfo.description}}
               </p>
               <section v-show="eventOver">
-                  <Reviews :reviews="eventInfo.reviews">
+                  <Reviews @addReview="addReview()" :reviews="eventInfo.reviews">
                   </Reviews>
               </section>
           </section>
@@ -77,6 +77,9 @@ export default {
             console.log("event Array after click and update:", eventArray)
             let emitValue = {...expiredEvent}
             this.$emit("eventExpired", emitValue)
+        },
+        addReview(value) {
+            console.log("detta är vad david har fel med:", value)
         }
     },
     computed: {

@@ -1,6 +1,6 @@
 <template>
   <section class="review-section">
-      <Review v-for="(review, index) in reviewsData" 
+      <Review v-for="(review, index) in reviews" 
       :key="index" 
       :review="review">
       </Review>
@@ -38,7 +38,7 @@ export default {
       }
       let review = {...userInput}
       this.reviewsData.push(review)
-      
+      this.$emit("comment", review)
       this.userInput.name = ""
       this.userInput.comment = ""
     }
