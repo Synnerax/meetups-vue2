@@ -30,7 +30,7 @@ export default {
         }
       }
       try{
-      let resp = await fetch(`https://api.jsonbin.io/v3/b/6038c7059342196a6a687d55/`, settings)
+      let resp = await fetch(`https://api.jsonbin.io/v3/b/6038c7059342196a6a687d55/latest`, settings)
       let data = await resp.json()
 
       this.eventsArray = await data.record.events

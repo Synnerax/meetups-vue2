@@ -90,7 +90,7 @@ export default {
         tag : this.chosenEvent ? this.chosenEvent.tag : 'Error getting tag',
         date : this.chosenEvent ? this.chosenEvent.date : 'Error getting date',
         time : this.chosenEvent ? this.chosenEvent.time : 'Error getting time',
-        reviews : this.chosenEvent ? this.chosenEvent.reviews : 'Error getting reviews',
+        reviews : this.chosenEvent ? this.chosenEvent.reviews : [],
 
 
       }

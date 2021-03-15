@@ -1,9 +1,9 @@
 <template>
   <section class="review-section">
-    <article class="review" v-for="(review, index) in reviewsData" :key="index">
-      <p class="review-name">Name: {{review.name}}</p>
-      <p class="review-comment">Comment: {{review.comment}}</p>
-    </article>
+      <Review v-for="(review, index) in reviewsData" 
+      :key="index" 
+      :review="review">
+      </Review>
 
     <input type="text" v-model="userInput.name" class="input-name" placeholder="Enter a name">
     <input type="text" v-model="userInput.comment" class="input-comment" placeholder="Add a Comment">
@@ -12,8 +12,12 @@
 </template>
 
 <script>
+import Review from "@/components/Review.vue"
 export default {
-  name: "review",
+  name: "reviews",
+  components: {
+    Review
+  },
   props: {
     reviews: Array
   },
