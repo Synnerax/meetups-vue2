@@ -23,11 +23,6 @@ export default {
   components: {
     SearchField,
     EventCard
-  },
-  mounted() {
-    //this.$nextTick(() => {
-      console.log("i was created")
-    //})
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <section class="review-section">
-      <Review v-for="(review, index) in reviews" 
+      <Review v-for="(review, index) in this.reviews" 
       :key="index" 
       :review="review">
       </Review>
@@ -19,11 +19,13 @@ export default {
     Review
   },
   props: {
+    event: Object,
     reviews: Array
   },
   data() {
     return {
-      reviewsData: [],
+      updatedEvent: {...this.event},
+      reviewsData: [...this.reviews],
       userInput: {
         name: "",
         comment: ""
@@ -36,11 +38,20 @@ export default {
         name: this.userInput.name,
         comment: this.userInput.comment
       }
-      let review = {...userInput}
-      this.reviewsData.push(review)
-      this.$emit("comment", review)
+      let review = {...userInput, id: this.event.id}
+      
+      
       this.userInput.name = ""
       this.userInput.comment = ""
+      console.log("----this is from reviews.vue", review)
+      this.$emit("comment", review)
+      
+    }
+  },
+  computed: {
+    reviewsList() {
+      let reviews = this.reviews ? this.reviews: []
+      return reviews
     }
   }
 }

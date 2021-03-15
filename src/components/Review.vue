@@ -1,7 +1,7 @@
 <template>
   <article class="review">
-      <p class="review-name">Name: {{review.name}}</p>
-      <p class="review-comment">Comment: {{review.comment}}</p>
+      <p class="review-name">Name: {{reviewInfo.name}}</p>
+      <p class="review-comment">Comment: {{reviewInfo.comment}}</p>
 
   </article>
 </template>
@@ -15,7 +15,7 @@ export default {
     computed: {
         reviewInfo() {
             let review = {
-                name: this.review ? this.review.name: "Anonymous",
+                name: this.review ? this.review.name: "Error getting Name",
                 comment: this.review ? this.review.comment: "Error getting comment"
             }
             return review

@@ -17,7 +17,8 @@
               {{eventInfo.description}}
               </p>
               <section v-show="eventOver">
-                  <Reviews @addReview="addReview()" :reviews="eventInfo.reviews">
+                  <Reviews @comment="addReview" 
+                  :event="eventInfo" :reviews="eventInfo.reviews">
                   </Reviews>
               </section>
           </section>
@@ -32,10 +33,8 @@
                     Enter Event
                 </button>
                 <div v-else >
-                    <p>Already Entered!</p>
-                    <button @click="endEvent">
-                        Click here to time travel until after the event
-                    </button>
+                    <p>You Have Entered the event!</p>
+
                 </div>
             </section>
         </section>
@@ -79,12 +78,13 @@ export default {
             this.$emit("eventExpired", emitValue)
         },
         addReview(value) {
-            console.log("detta är vad david har fel med:", value)
+            this.$emit("addReview", value)
         }
     },
     computed: {
     eventInfo() {
       let event = {
+        id : this.chosenEvent ? this.chosenEvent.id : "Error getting ID",
         title : this.chosenEvent ? this.chosenEvent.title : 'Error',
         price : this.chosenEvent ? this.chosenEvent.price : 'Error getting price',
         description : this.chosenEvent ? this.chosenEvent.description : 'No description available',
