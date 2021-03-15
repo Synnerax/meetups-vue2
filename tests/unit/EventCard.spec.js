@@ -43,13 +43,11 @@ it("should describe the correct information in a card", async () => {
       })
       
       const eventTitle = wrapper.find('.card-title').exists()
-      const eventImg = wrapper.find('.card-img').exists()
       const eventDate = wrapper.find('.card-date').exists()
       const eventTime = wrapper.find('.card-time').exists()
       const eventOrganizer = wrapper.find('.card-organizer').exists()
 
       expect(eventTitle).toBeTruthy()
-      expect(eventImg).toBeTruthy()
       expect(eventDate).toBeTruthy()
       expect(eventTime).toBeTruthy()
       expect(eventOrganizer).toBeTruthy()
