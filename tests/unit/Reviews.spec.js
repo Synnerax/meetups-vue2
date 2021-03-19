@@ -4,14 +4,20 @@ import Review from "@/components/Review.vue"
 
 
 describe("Review.vue", () => {
-    it("should check if review section is displayed", async () => {
-        const wrapper = shallowMount(Reviews)
+    it("should check if review section is displayed",  () => {
+        const wrapper = shallowMount(Reviews, {
+            propsData: {
+                reviews: [
+                    {
+                        "name": "testname",
+                        "comment": "test comment"
+                    }
+                ]
+            }
+        })
+        const reviewSec = wrapper.find(".review-section").exists()
 
-        const reviewSection = wrapper.find(".review-section")
-        
-        expect(reviewSection.exists()).toBeTruthy()
-
-
+        expect(reviewSec).toBeTruthy()
     
     })
 
