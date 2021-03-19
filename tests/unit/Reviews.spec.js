@@ -1,5 +1,6 @@
 import { mount, shallowMount } from "@vue/test-utils";
 import Reviews from "@/components/Reviews.vue";
+import Review from "@/components/Review.vue"
 
 
 describe("Review.vue", () => {
@@ -16,14 +17,14 @@ describe("Review.vue", () => {
 
     it("should display correct name and comment ", async () => {
 
-        const wrapper = shallowMount(Reviews, {
+        const wrapper = shallowMount(Review, {
             propsData:{
-                reviews: [
+                review: 
                     {
-                        name: "fake name",
-                        comment: "some text left by the reviewer"
+                        "name": "fake name",
+                        "comment": "some text left by the reviewer"
                     }
-                ]
+                
             }
         })
         const review = wrapper.find(".review")
