@@ -9,6 +9,11 @@ describe('InfoPage.vue', () => {
             propsData: {
                 "eventHistory": [],
                 "eventsArray": []
+            },
+            computed: {
+                    eventOver() {
+                        return false
+                    }
             }
         });
         
@@ -28,6 +33,9 @@ describe('InfoPage.vue', () => {
             computed: {
                 alreadyEntered() {
                     return true
+                },
+                eventOver() {
+                    return false
                 }
             }
         })
@@ -43,6 +51,11 @@ describe('InfoPage.vue', () => {
             propsData: {
                 "eventHistory": [],
                 "eventsArray": []
+            },
+            computed: {
+                eventOver() {
+                    return false
+                }
             }
         })
         
