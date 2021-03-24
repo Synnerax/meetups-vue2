@@ -28,12 +28,18 @@
                 <p>Starts: {{eventInfo.time.hour}}:{{eventInfo.time.minute}}</p>
             </section>
 
-            <section class="enter-event">
-                <button v-if="!alreadyEntered" @click="enterEvent">
+            <section class="enter-event" v-show="!isOverAndNotEntered">
+                <button id="enter-button" v-show="!alreadyEntered" @click="enterEvent">
                     Enter Event
                 </button>
-                <div v-else >
-                    <p>You Have Entered the event!</p>
+                <div class="entered-event" v-show="alreadyEntered" >
+                    <p>{{buttonContainerText}}</p>
+
+                </div>
+            </section>
+            <section class="enter-event" v-show="isOverAndNotEntered">
+                <div class="entered-event" >
+                    <p>Event Is Already Over</p>
 
                 </div>
             </section>
@@ -53,7 +59,8 @@ export default {
     },
     data() {
         return {
-            entered: false
+            entered: false, 
+            buttonContainerText: "You Have Entered the event!"
         }
     },
     props: {
@@ -100,7 +107,7 @@ export default {
       return event;
     },
     eventOver() {
-        return this.chosenEvent ? this.chosenEvent.eventOver: false
+        return this.chosenEvent.eventOver
     },
     chosenEvent(){ 
         if ( this.$route !== undefined ) {
@@ -116,7 +123,14 @@ export default {
         } else {
           return false
         }
-      }
+    },
+    isOverAndNotEntered(){
+        if(!this.alreadyEntered && this.eventOver) {
+            return true
+        } else {
+            return false
+        }
+    }
     }
     
 }

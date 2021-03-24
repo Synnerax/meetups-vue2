@@ -80,7 +80,6 @@ describe("CreateEvent.vue", () => {
         }) 
         const button = wrapper.find("button")
 
-        console.log(button.text())
         enableFetchMocks()
         fetch.mockResponseOnce(JSON.stringify(expectedResponse))
         //borde göra en till mockresponse som ger eventsArray data 
