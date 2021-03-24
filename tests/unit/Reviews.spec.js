@@ -6,6 +6,7 @@ import Review from "@/components/Review.vue"
 describe("Review.vue", () => {
     it("should check if review section is displayed",  () => {
         const wrapper = shallowMount(Reviews, {
+            //skickar props för att inte få load error med jest
             propsData: {
                 reviews: [
                     {
