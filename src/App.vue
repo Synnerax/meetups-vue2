@@ -86,6 +86,35 @@ export default {
         "tag": "Culture",
         "eventOver": true,
         "reviews": []
+      },
+      {
+        "id": 5,
+        "organizer": "Chrille L.",
+        "title": "Onlinefilosofika - Makt",
+        "location": "Göteborg",
+        "description": "In a remote Polish village, Janina devotes the dark winter days to studying astrology, translating the poetry of William Shakespear, and taking care of the summer homes of wealthy Warsaw residents. Her reputation as a crank and a recluse is amplified by her not-so-secret preference for the company of animals over humans.\n\nThen a neighbour turns up dead. Soon other bodies are discovered, in increasingly strange circumstances. As suspicions mount, Janina inserts herself into the investigation, certain that she knows whodunit. If only anyone would take any notice of her ...\n\nThis thriller-cum-fairy tale, from the 2018 winner of the Nobel Prize in Literature, is a provocative exploration of the murky borderland between sanity and madness, justice and tradition, autonomy and fate. Whom do we deem sane? it asks. Who is worthy of a voice?",
+        "date": "2020-01-14",
+        "time": {
+          "hour": "05",
+          "minute": "40",
+          "abbreviation": ""
+        },
+        "tag": "Culture",
+        "eventOver": true,
+        "reviews": [
+          {
+            "name": "Al",
+            "comment": "Best event i've ever been to!"
+          },
+          {
+            "name": "Alan",
+            "comment": "Only went for the food.."
+          },
+          {
+            "name": "Alice",
+            "comment": "Could have been better sound."
+          }
+        ]
       }
     ],
       eventHistory: []
