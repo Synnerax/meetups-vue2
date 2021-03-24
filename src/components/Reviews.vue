@@ -7,7 +7,7 @@
 
     <input type="text" v-model="userInput.name" class="input-name" placeholder="Enter a name">
     <input type="text" v-model="userInput.comment" class="input-comment" placeholder="Add a Comment">
-    <button @click="addReview">Add Review</button>
+    <button id="comment-button" @click="addReview()">Add Review</button>
   </section>
 </template>
 
@@ -35,8 +35,8 @@ export default {
   methods: {
     addReview() {
       let userInput = {
-        name: this.userInput.name,
-        comment: this.userInput.comment
+        name: this.userInput.name ? this.userInput.name: "Anonymous",
+        comment: this.userInput.comment ? this.userInput.comment: "User forgot to write a comment"
       }
       let review = {...userInput, id: this.event.id}
       

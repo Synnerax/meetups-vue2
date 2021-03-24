@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <SearchField></SearchField>
     <section class="event-section">
       <h1 class="section-header">Events</h1>
       <section class="event-list">
@@ -12,7 +11,6 @@
 </template>
 
 <script>
-import SearchField from '@/components/SearchField.vue'
 import EventCard from '@/components/EventCard.vue'
 
 export default {
@@ -21,7 +19,6 @@ export default {
     eventsArray: Array
   },
   components: {
-    SearchField,
     EventCard
   }
 }
