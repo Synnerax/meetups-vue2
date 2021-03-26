@@ -29,7 +29,6 @@ export default {
     },
     methods: {
       goTo(id) {
-        console.log(id)
         this.$router.push(`/event-info/${id}`);
     }
     }

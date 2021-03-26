@@ -70,7 +70,6 @@ export default {
     methods: {
         enterEvent() {
             const event = this.chosenEvent
-            console.log(event)
             this.$emit("entered", event)
             this.entered = true
         },
@@ -80,7 +79,6 @@ export default {
             let expiredEvent = eventArray.find(event => event.id == this.$route.params.id)
             expiredEvent.eventOver = true
             //console.log("this is the new event:", event)
-            console.log("event Array after click and update:", eventArray)
             let emitValue = {...expiredEvent}
             this.$emit("eventExpired", emitValue)
         },

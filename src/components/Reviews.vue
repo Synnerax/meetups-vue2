@@ -43,7 +43,6 @@ export default {
       
       this.userInput.name = ""
       this.userInput.comment = ""
-      console.log("----this is from reviews.vue", review)
       this.$emit("comment", review)
       
     }

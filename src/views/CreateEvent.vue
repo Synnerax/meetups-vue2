@@ -110,28 +110,9 @@ export default {
     },
     methods: {
         async pushToEventsArray() {
-        console.log("1", this.eventsArray)
         this.events = [...this.eventsArray]
-        console.log("2")
         this.event.id = this.eventsArray.length + 1
         this.events.push(this.event)
-        console.log("3")
-
-/*      
-        let req = new XMLHttpRequest();
-
-        req.onreadystatechange = () => {
-            if (req.readyState == XMLHttpRequest.DONE) {
-                console.log(req.responseText);
-            }
-        };
-
-        req.open("PUT", "https://api.jsonbin.io/v3/b/6038c7059342196a6a687d55/", true);
-        req.setRequestHeader("Content-Type", "application/json");
-        req.setRequestHeader("X-Master-Key", "$2b$10$IQutUOnIDU5m1VTI.4PzQ.M1ZzdQ4Q/XZzMz/MT7RKqX8oHx3k0pu");
-        req.send(JSON.stringify({events: this.events}));
-        }
-*/
         
         let settings = {
             method: 'PUT',
@@ -143,12 +124,9 @@ export default {
             }
         }
         try{
-            console.log("4")
-        console.log("hej här är jag")
         let resp = await fetch(`https://api.jsonbin.io/v3/b/6038c7059342196a6a687d55/`, settings)
         let data = await resp.json()
 
-        console.log(data)
         }
         catch(err){
             console.error(err)

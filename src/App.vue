@@ -122,11 +122,9 @@ export default {
   },
   methods: {
     addToHistory(event) {
-      console.log("i entered this event", event)
       this.eventHistory.push(event)
     },
     async updateHistory(emitValue) {
-      console.log("this is emitted after expired func in app.vue", emitValue)
       let itemInHistory = this.eventHistory.find(event => event.id == emitValue.id)
       itemInHistory.eventOver = true
       let itemInEventArray = this.events.find(event => event.id == emitValue.id)
@@ -135,9 +133,7 @@ export default {
     },
     async updateReviewArray(value) {
       let review = {...value}
-      console.log("this is the new update in app.vue", review)
       let oldEvent = this.events.find(event => event.id === value.id)
-      console.log("this is the oldEvent", oldEvent)
       await oldEvent.reviews.push(review)
     }
   }
