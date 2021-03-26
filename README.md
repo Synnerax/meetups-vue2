@@ -8,7 +8,7 @@ https://github.com/Synnerax/meetups-vue2
 ## Molntjänst: 
 
 Denna app använder heroku som molntjänst.
-Länk till appen: https://meetup-maria.herokuapp.com/#/
+Länk till appen: https://meetups-projekt-paketering.herokuapp.com/#/
 
 ## Level-ups: 
 
